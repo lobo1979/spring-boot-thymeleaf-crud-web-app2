@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New department</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/litera/bootstrap.min.css" integrity="sha384-enpDwFISL6M3ZGZ50Tjo8m65q06uLVnyvkFO3rsoW0UC15ATBFz3QEhr3hmxpYsn" crossorigin="anonymous">    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" integrity="sha384-xeJqLiuOvjUBq3iGOjvSQSIlwrpqjSHXpduPd6rQpuiM3f5/ijby8pCsnbu5S81n" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <h1>Department Management System</h1>
+    <hr>
+    <h2>New Department</h2>
+
+    <form action="#" th:action="@{/saveDepartment}" th:object="${department}" method="POST">
+        <label class="form-label mt-4" for="inputName">Department Name</label>
+        <input type="text" th:field="*{name}" class="form-control col-4" id="inputName">
+        </p>
+        <button type="submit" class="btn btn-info col-3">Save Department</button>
+    </form>
+
+    <hr>
+
+    <a th:href = "@{/showDepartments}">Back to departments list</a>
+</div>
+</body>
+</html>

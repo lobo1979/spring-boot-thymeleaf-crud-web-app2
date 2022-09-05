@@ -17,6 +17,13 @@ public class Employee {
     @Column(name = "email")
     private String email;
 
+
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "department_id", referencedColumnName = "id")
+    private Department department;
+
+
     public Long getId() {
         return id;
     }
@@ -48,4 +55,13 @@ public class Employee {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+
 }

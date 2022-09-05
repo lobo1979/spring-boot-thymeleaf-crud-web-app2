@@ -24,6 +24,15 @@
         <label class="form-label mt-2" for="inputEmail">Email</label>
         <input id="inputEmail" type="text" th:field="*{email}" class="form-control mb-4 col-4">
 
+        <label class="form-label mt-2" for="exampleSelect1">Department</label>
+        </p>
+        <select class="form-select" id="exampleSelect1">
+            <option value="0">select option</option>
+            <option th:each="dep:${listDepartments}" th:value="${dep.id}" th:text="${dep.name}" th:selected="(${dep.id} == *{department.id})"></option>
+        </select>
+        </p>
+
+
         <button type="submit" class="btn btn-info col-2"> Update Employee</button>
     </form>
 

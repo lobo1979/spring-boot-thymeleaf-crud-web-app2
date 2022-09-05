@@ -1,5 +1,6 @@
 package net.javaguides.springboot.service;
 
+import net.javaguides.springboot.model.Department;
 import net.javaguides.springboot.model.Employee;
 
 import java.util.List;
@@ -14,6 +15,7 @@ public interface EmployeeService {
 
     void deleteEmployeeById(long id);
 
+    Department department(long id);
 
 
 }

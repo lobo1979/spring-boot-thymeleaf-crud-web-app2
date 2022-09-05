@@ -18,6 +18,13 @@
         <input type="text" th:field="*{lastName}" class="form-control col-4" id="inputLastName">
         <label class="form-label mt-4" for="inputEmail">Email</label>
         <input type="email" th:field="*{email}" class="form-control col-4" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email">
+
+        <label class="form-label mt-2" for="exampleSelect1">Department</label>
+        </p>
+        <select class="form-select" id="exampleSelect1">
+            <option value="0">select option</option>
+            <option th:each="dep:${listDepartments}" th:value="${dep.id}" th:text="${dep.name}"></option>
+        </select>
         </p>
         <button type="submit" class="btn btn-info col-3">Save Employee</button>
     </form>
